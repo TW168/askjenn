@@ -1,0 +1,10 @@
+version: '3.8'
+services:
+  streamlit:
+    image: python:3.10-slim
+    volumes:
+      - ./:/app
+    working_dir: /app
+    command: bash -c "pip install -r requirements.txt && streamlit run app.py"
+    ports:
+      - 8501:8501
